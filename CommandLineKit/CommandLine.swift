@@ -310,7 +310,11 @@ public class CommandLine {
       }
 
       /* Remove attached argument from flag */
+      #if swift(>=4.0)
       let splitFlag = flagWithArg.split(separator: argumentAttacher, maxSplits: 1)
+      #else
+      let splitFlag = flagWithArg.split(by: argumentAttacher, maxSplits: 1)
+      #endif
       let flag = splitFlag[0]
       let attachedArg: String? = splitFlag.count == 2 ? String(splitFlag[1]) : nil
 
