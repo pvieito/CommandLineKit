@@ -19,12 +19,12 @@
 import PackageDescription
 
 let package = Package(
-    name: "CommandLine",
+    name: "CommandLineKit",
     products: [
-        .library(name: "CommandLine", type: .static, targets: ["CommandLine"])
+        .library(name: "CommandLineKit", type: .static, targets: ["CommandLineKit"])
     ],
     targets: [
-        .target(name: "CommandLine")
+        .target(name: "CommandLineKit")
     ],
     swiftLanguageVersions: [ 4 ]
 )
