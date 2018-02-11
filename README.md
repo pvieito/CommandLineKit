@@ -1,8 +1,6 @@
-# CommandLineKit [![Build Status](https://travis-ci.org/jatoben/CommandLine.svg?branch=master)](https://travis-ci.org/jatoben/CommandLine)
+# CommandLineKit
 
 A pure Swift library for creating command-line interfaces.
-
-*Note: CommandLineKit `master` requires Xcode 8 / Swift 3.0. If you're using older versions of Swift, please check out the [earlier releases](https://github.com/jatoben/CommandLine/releases).*
 
 ## Usage
 
@@ -160,7 +158,7 @@ $ ./example3 -👍 --👻
 
 License
 -------
-Copyright (c) 2014 Ben Gollmer.
+Copyright © 2014 Ben Gollmer.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
