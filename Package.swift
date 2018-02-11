@@ -24,7 +24,7 @@ let package = Package(
         .library(name: "CommandLineKit", type: .static, targets: ["CommandLineKit"])
     ],
     targets: [
-        .target(name: "CommandLineKit")
+        .target(name: "CommandLineKit", path: "CommandLineKit")
     ],
     swiftLanguageVersions: [ 4 ]
 )

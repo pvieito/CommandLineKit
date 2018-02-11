@@ -411,7 +411,7 @@ public class CommandLine {
     /* Nil coalescing operator (??) doesn't work on closures :( */
     let format = formatOutput != nil ? formatOutput! : defaultFormat
 
-    let name = _arguments[0]
+    let name = URL(fileURLWithPath: _arguments[0]).lastPathComponent
     print(format("Usage: \(name) [options]", .about), terminator: "", to: &to)
 
     for opt in _options {
