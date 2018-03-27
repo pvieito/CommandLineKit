@@ -22,17 +22,9 @@
   import Glibc
 #endif
 
-internal extension String {
-  /* Retrieves locale-specified decimal separator from the environment
-   * using localeconv(3).
-   */
-  private func _localDecimalPoint() -> Character {
-    guard let locale = localeconv(), let decimalPoint = locale.pointee.decimal_point else {
-      return "."
-    }
+import Foundation
 
-    return Character(UnicodeScalar(UInt8(bitPattern: decimalPoint.pointee)))
-  }
+internal extension String {
 
   /**
    * Attempts to parse the string value into a Double.
@@ -40,10 +32,7 @@ internal extension String {
    * - returns: A Double if the string can be parsed, nil otherwise.
    */
   func toDouble() -> Double? {
-    let decimalPoint = String(self._localDecimalPoint())
-    guard decimalPoint == "." || self.range(of: ".") == nil else { return nil }
-    let localeSelf = self.replacingOccurrences(of: decimalPoint, with: ".")
-    return Double(localeSelf)
+    return Double(self)
   }
 
   /**
