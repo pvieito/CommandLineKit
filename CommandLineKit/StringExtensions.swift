@@ -15,13 +15,6 @@
  * limitations under the License.
  */
 
-/* Required for localeconv(3) */
-#if os(OSX)
-  import Darwin
-#elseif os(Linux)
-  import Glibc
-#endif
-
 import Foundation
 
 internal extension String {
