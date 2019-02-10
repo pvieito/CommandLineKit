@@ -15,10 +15,7 @@
  * limitations under the License.
  */
 
-import Foundation
-
 internal extension String {
-
   /**
    * Attempts to parse the string value into a Double.
    *

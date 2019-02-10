@@ -300,5 +300,4 @@ public class EnumOption<T:RawRepresentable>: Option where T.RawValue == String {
 
     return false
   }
-
 }
