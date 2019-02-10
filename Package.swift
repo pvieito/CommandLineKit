@@ -24,6 +24,7 @@ let package = Package(
         .library(name: "CommandLineKit", targets: ["CommandLineKit"])
     ],
     targets: [
-        .target(name: "CommandLineKit", path: "CommandLineKit")
+        .target(name: "CommandLineKit", path: "CommandLineKit"),
+        .testTarget(name: "CommandLineKitTests", dependencies: ["CommandLineKit"])
     ]
 )

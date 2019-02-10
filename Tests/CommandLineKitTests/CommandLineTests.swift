@@ -26,7 +26,6 @@ internal class CommandLineTests: XCTestCase {
       ("testIntOptions", testIntOptions),
       ("testCounterOptions", testCounterOptions),
       ("testDoubleOptions", testDoubleOptions),
-      ("testDoubleOptionsInAlternateLocale", testDoubleOptionsInAlternateLocale),
       ("testStringOptions", testStringOptions),
       ("testMultiStringOptions", testMultiStringOptions),
       ("testConcatOptionWithValue", testConcatOptionWithValue),
@@ -289,22 +288,6 @@ internal class CommandLineTests: XCTestCase {
       XCTAssertEqual(h.value, -3.14159, "Failed to get correct value from double with negative value")
     } catch {
       XCTFail("Failed to parse double option with negative value: \(error)")
-    }
-  }
-
-  func testDoubleOptionsInAlternateLocale() {
-    let cli = CommandLine(arguments: ["CommandLineTests", "-a", "3,14159"])
-    let a = DoubleOption(shortFlag: "a", longFlag: "a1", required: true, helpMessage: "")
-
-    cli.addOptions(a)
-
-    setlocale(LC_ALL, "sv_SE.UTF-8")
-
-    do {
-      try cli.parse()
-      XCTAssertEqual(a.value, 3.14159, "Failed to get correct value from double in alternate locale")
-    } catch {
-      XCTFail("Failed to parse double options in alternate locale: \(error)")
     }
   }
 

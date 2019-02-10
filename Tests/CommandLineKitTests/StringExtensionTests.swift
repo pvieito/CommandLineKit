@@ -83,15 +83,6 @@ class StringExtensionTests: XCTestCase {
     let n = "💩".toDouble()
     XCTAssertNil(n, "Parsed poo")
 
-    /* Locale handling */
-    setlocale(LC_NUMERIC, "sv_SE.UTF-8")
-
-    let o = "888,8".toDouble()
-    XCTAssert(o == 888.8, "Failed to parse double in alternate locale")
-
-    let p = "888.8".toDouble()
-    XCTAssertNil(p, "Parsed double in alternate locale with wrong decimal point")
-
     /* Set locale back so as not to perturb any other tests */
     setlocale(LC_NUMERIC, "")
   }
