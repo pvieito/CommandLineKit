@@ -31,11 +31,11 @@
 		5D06885F19674DA600BBFAAC /* CommandLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; };
 		5D068866196A212A00BBFAAC /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; };
 		5D449A17198B015E00F9A8A6 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; };
-		5D449B63198B412E00F9A8A6 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 		AABB3B4C220FB40C00DEE6F4 /* StringExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 		AABB3B4D220FB40C00DEE6F4 /* CommandLineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLineTests.swift; sourceTree = "<group>"; };
 		AABB3B4E220FB40C00DEE6F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AABB3B53220FB42A00DEE6F4 /* CommandLineKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommandLineKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AADC394F22404CC800502FBB /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 		5D06883919674D7D00BBFAAC = {
 			isa = PBXGroup;
 			children = (
-				5D449B63198B412E00F9A8A6 /* ReadMe.md */,
+				AADC394F22404CC800502FBB /* Package.swift */,
 				5D06884519674D7D00BBFAAC /* CommandLineKit */,
 				AABB3B4B220FB40C00DEE6F4 /* CommandLineKitTests */,
 				5D06884419674D7D00BBFAAC /* Products */,
@@ -154,7 +154,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Ben Gollmer";
 				TargetAttributes = {
 					5D06884219674D7D00BBFAAC = {
@@ -170,10 +170,9 @@
 			};
 			buildConfigurationList = 5D06883D19674D7D00BBFAAC /* Build configuration list for PBXProject "CommandLineKit" */;
 			compatibilityVersion = "Xcode 6.3";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -240,6 +239,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -298,6 +298,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
