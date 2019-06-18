@@ -16,99 +16,99 @@
  */
 
 internal extension String {
-  /**
-   * Attempts to parse the string value into a Double.
-   *
-   * - returns: A Double if the string can be parsed, nil otherwise.
-   */
-  func toDouble() -> Double? {
-    return Double(self)
-  }
-
-  /**
-   * Splits a string into an array of string components.
-   *
-   * - parameter by:        The character to split on.
-   * - parameter maxSplits: The maximum number of splits to perform. If 0, all possible splits are made.
-   *
-   * - returns: An array of string components.
-   */
-  func split(by: Character, maxSplits: Int = 0) -> [String] {
-    var s = [String]()
-    var numSplits = 0
-
-    var curIdx = self.startIndex
-    for i in self.indices {
-      let c = self[i]
-      if c == by && (maxSplits == 0 || numSplits < maxSplits) {
-        s.append(String(self[curIdx..<i]))
-        curIdx = self.index(after: i)
-        numSplits += 1
-      }
+    /**
+     * Attempts to parse the string value into a Double.
+     *
+     * - returns: A Double if the string can be parsed, nil otherwise.
+     */
+    func toDouble() -> Double? {
+        return Double(self)
     }
-
-    if curIdx != self.endIndex {
-      s.append(String(self[curIdx..<self.endIndex]))
-    }
-
-    return s
-  }
-
-  /**
-   * Pads a string to the specified width.
-   *
-   * - parameter toWidth: The width to pad the string to.
-   * - parameter by: The character to use for padding.
-   *
-   * - returns: A new string, padded to the given width.
-   */
-  func padded(toWidth width: Int, with padChar: Character = " ") -> String {
-    var s = self
-    var currentLength = self.count
-
-    while currentLength < width {
-      s.append(padChar)
-      currentLength += 1
-    }
-
-    return s
-  }
-
-  /**
-   * Wraps a string to the specified width.
-   *
-   * This just does simple greedy word-packing, it doesn't go full Knuth-Plass.
-   * If a single word is longer than the line width, it will be placed (unsplit)
-   * on a line by itself.
-   *
-   * - parameter atWidth: The maximum length of a line.
-   * - parameter wrapBy:  The line break character to use.
-   * - parameter splitBy: The character to use when splitting the string into words.
-   *
-   * - returns: A new string, wrapped at the given width.
-   */
-  func wrapped(atWidth width: Int, wrapBy: Character = "\n", splitBy: Character = " ") -> String {
-    var s = ""
-    var currentLineWidth = 0
-
-    for word in self.split(by: splitBy) {
-      let wordLength = word.count
-
-      if currentLineWidth + wordLength + 1 > width {
-        /* Word length is greater than line length, can't wrap */
-        if wordLength >= width {
-          s += word
+    
+    /**
+     * Splits a string into an array of string components.
+     *
+     * - parameter by:        The character to split on.
+     * - parameter maxSplits: The maximum number of splits to perform. If 0, all possible splits are made.
+     *
+     * - returns: An array of string components.
+     */
+    func split(by: Character, maxSplits: Int = 0) -> [String] {
+        var s = [String]()
+        var numSplits = 0
+        
+        var curIdx = self.startIndex
+        for i in self.indices {
+            let c = self[i]
+            if c == by && (maxSplits == 0 || numSplits < maxSplits) {
+                s.append(String(self[curIdx..<i]))
+                curIdx = self.index(after: i)
+                numSplits += 1
+            }
         }
-
-        s.append(wrapBy)
-        currentLineWidth = 0
-      }
-
-      currentLineWidth += wordLength + 1
-      s += word
-      s.append(splitBy)
+        
+        if curIdx != self.endIndex {
+            s.append(String(self[curIdx..<self.endIndex]))
+        }
+        
+        return s
     }
-
-    return s
-  }
+    
+    /**
+     * Pads a string to the specified width.
+     *
+     * - parameter toWidth: The width to pad the string to.
+     * - parameter by: The character to use for padding.
+     *
+     * - returns: A new string, padded to the given width.
+     */
+    func padded(toWidth width: Int, with padChar: Character = " ") -> String {
+        var s = self
+        var currentLength = self.count
+        
+        while currentLength < width {
+            s.append(padChar)
+            currentLength += 1
+        }
+        
+        return s
+    }
+    
+    /**
+     * Wraps a string to the specified width.
+     *
+     * This just does simple greedy word-packing, it doesn't go full Knuth-Plass.
+     * If a single word is longer than the line width, it will be placed (unsplit)
+     * on a line by itself.
+     *
+     * - parameter atWidth: The maximum length of a line.
+     * - parameter wrapBy:  The line break character to use.
+     * - parameter splitBy: The character to use when splitting the string into words.
+     *
+     * - returns: A new string, wrapped at the given width.
+     */
+    func wrapped(atWidth width: Int, wrapBy: Character = "\n", splitBy: Character = " ") -> String {
+        var s = ""
+        var currentLineWidth = 0
+        
+        for word in self.split(by: splitBy) {
+            let wordLength = word.count
+            
+            if currentLineWidth + wordLength + 1 > width {
+                /* Word length is greater than line length, can't wrap */
+                if wordLength >= width {
+                    s += word
+                }
+                
+                s.append(wrapBy)
+                currentLineWidth = 0
+            }
+            
+            currentLineWidth += wordLength + 1
+            s += word
+            s.append(splitBy)
+        }
+        
+        return s
+    }
 }
