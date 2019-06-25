@@ -20,15 +20,6 @@ import XCTest
 @testable import CommandLineKit
 
 class StringExtensionTests: XCTestCase {
-  static var allTests : [(String, (StringExtensionTests) -> () throws -> Void)] {
-    return [
-      ("testToDouble", testToDouble),
-      ("testSplit", testSplit),
-      ("testPadded", testPadded),
-      ("testWrapped", testWrapped),
-    ]
-  }
-
   override func setUp() {
     /* set locale to "C" to start with '.' as the decimal separator */
     setlocale(LC_ALL, "C")

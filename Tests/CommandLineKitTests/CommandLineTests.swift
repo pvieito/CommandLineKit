@@ -20,38 +20,6 @@ import XCTest
 @testable import CommandLineKit
 
 internal class CommandLineTests: XCTestCase {
-  static var allTests : [(String, (CommandLineTests) -> () throws -> Void)] {
-    return [
-      ("testBoolOptions", testBoolOptions),
-      ("testIntOptions", testIntOptions),
-      ("testCounterOptions", testCounterOptions),
-      ("testDoubleOptions", testDoubleOptions),
-      ("testStringOptions", testStringOptions),
-      ("testMultiStringOptions", testMultiStringOptions),
-      ("testConcatOptionWithValue", testConcatOptionWithValue),
-      ("testMissingRequiredOption", testMissingRequiredOption),
-      ("testAttachedArgumentValues", testAttachedArgumentValues),
-      ("testEmojiOptions", testEmojiOptions),
-      ("testEnumOption", testEnumOption),
-      ("testArgumentStopper", testArgumentStopper),
-      ("testFlagStyles", testFlagStyles),
-      ("testEmptyFlags", testEmptyFlags),
-      ("testDifferentCaseFlagReuse", testDifferentCaseFlagReuse),
-      ("testMixedExample", testMixedExample),
-      ("testWasSetProperty", testWasSetProperty),
-      ("testShortFlagOnlyOption", testShortFlagOnlyOption),
-      ("testLongFlagOnlyOption", testLongFlagOnlyOption),
-      ("testStrictMode", testStrictMode),
-      ("testUnparsedArguments", testUnparsedArguments),
-      ("testInvalidArgumentErrorDescription", testInvalidArgumentErrorDescription),
-      ("testMissingRequiredOptionsErrorDescription", testMissingRequiredOptionsErrorDescription),
-      ("testPrintUsage", testPrintUsage),
-      ("testPrintUsageError", testPrintUsageError),
-      ("testPrintUsageToStderr", testPrintUsageToStderr),
-      ("testCustomOutputFormatter", testCustomOutputFormatter),
-    ]
-  }
-
   override func setUp() {
     /* set locale to "C" to start with '.' as the decimal separator */
     setlocale(LC_ALL, "C")
@@ -175,8 +143,16 @@ internal class CommandLineTests: XCTestCase {
   }
 
   func testCounterOptions() {
-    let cli = CommandLine(arguments: [ "CommandLineTests", "-a", "--bach", "-c", "-c",
-      "--doggerel", "-doggerel", "--doggerel", "-eeee"])
+    let cli = CommandLine(arguments: [
+        "CommandLineTests",
+        "-a",
+        "--bach",
+        "-c",
+        "-c",
+        "--doggerel",
+        "-doggerel",
+        "--doggerel"
+        ])
 
     /* Short flag */
     let a = CounterOption(shortFlag: "a", longFlag: "a1", helpMessage: "")
@@ -192,13 +168,10 @@ internal class CommandLineTests: XCTestCase {
     /* Multiple long flags */
     let d = CounterOption(shortFlag: "d", longFlag: "doggerel", helpMessage: "")
 
-    /* Concatenated multiple flags */
-    let e = CounterOption(shortFlag: "e", longFlag: "e1", helpMessage: "")
-
     /* Unspecified option should return 0, not nil */
     let f = CounterOption(shortFlag: "f", longFlag: "f1", helpMessage: "")
 
-    cli.addOptions(a, b, c, d, e, f)
+    cli.addOptions(a, b, c, d, f)
 
     do {
       try cli.parse()
@@ -206,7 +179,6 @@ internal class CommandLineTests: XCTestCase {
       XCTAssertEqual(b.value, 1, "Failed to get correct value from long counter")
       XCTAssertEqual(c.value, 2, "Failed to get correct value from multi-flagged short counter")
       XCTAssertEqual(d.value, 3, "Failed to get correct value from multi-flagged long counter")
-      XCTAssertEqual(e.value, 4, "Failed to get correct value from concat multi-flagged counter")
       XCTAssertEqual(f.value, 0, "Failed to get correct value from unspecified counter")
     } catch {
       XCTFail("Failed to parse counter options: \(error)")
