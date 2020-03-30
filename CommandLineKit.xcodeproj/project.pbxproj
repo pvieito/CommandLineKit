@@ -10,20 +10,7 @@
 		5D06886019674DA600BBFAAC /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D06885F19674DA600BBFAAC /* CommandLine.swift */; };
 		5D068867196A212A00BBFAAC /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D068866196A212A00BBFAAC /* Option.swift */; };
 		5D449A18198B015E00F9A8A6 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D449A17198B015E00F9A8A6 /* StringExtensions.swift */; };
-		AABB3B58220FB42A00DEE6F4 /* CommandLineKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D06884319674D7D00BBFAAC /* CommandLineKit.framework */; };
-		AABB3B5E220FB48200DEE6F4 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB3B4C220FB40C00DEE6F4 /* StringExtensionTests.swift */; };
-		AABB3B5F220FB48200DEE6F4 /* CommandLineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB3B4D220FB40C00DEE6F4 /* CommandLineTests.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		AABB3B59220FB42A00DEE6F4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5D06883A19674D7D00BBFAAC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5D06884219674D7D00BBFAAC;
-			remoteInfo = CommandLineKit;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5D06884319674D7D00BBFAAC /* CommandLineKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommandLineKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -31,11 +18,6 @@
 		5D06885F19674DA600BBFAAC /* CommandLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; };
 		5D068866196A212A00BBFAAC /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; };
 		5D449A17198B015E00F9A8A6 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; };
-		AABB3B4C220FB40C00DEE6F4 /* StringExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
-		AABB3B4D220FB40C00DEE6F4 /* CommandLineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLineTests.swift; sourceTree = "<group>"; };
-		AABB3B4E220FB40C00DEE6F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AABB3B53220FB42A00DEE6F4 /* CommandLineKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommandLineKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AADC394F22404CC800502FBB /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,23 +28,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AABB3B50220FB42A00DEE6F4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AABB3B58220FB42A00DEE6F4 /* CommandLineKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		5D06883919674D7D00BBFAAC = {
 			isa = PBXGroup;
 			children = (
-				AADC394F22404CC800502FBB /* Package.swift */,
 				5D06884519674D7D00BBFAAC /* CommandLineKit */,
-				AABB3B4B220FB40C00DEE6F4 /* CommandLineKitTests */,
 				5D06884419674D7D00BBFAAC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,7 +43,6 @@
 			isa = PBXGroup;
 			children = (
 				5D06884319674D7D00BBFAAC /* CommandLineKit.framework */,
-				AABB3B53220FB42A00DEE6F4 /* CommandLineKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,17 +56,6 @@
 				5D06884719674D7D00BBFAAC /* Info.plist */,
 			);
 			path = CommandLineKit;
-			sourceTree = "<group>";
-		};
-		AABB3B4B220FB40C00DEE6F4 /* CommandLineKitTests */ = {
-			isa = PBXGroup;
-			children = (
-				AABB3B4C220FB40C00DEE6F4 /* StringExtensionTests.swift */,
-				AABB3B4D220FB40C00DEE6F4 /* CommandLineTests.swift */,
-				AABB3B4E220FB40C00DEE6F4 /* Info.plist */,
-			);
-			name = CommandLineKitTests;
-			path = Tests/CommandLineKitTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,24 +89,6 @@
 			productReference = 5D06884319674D7D00BBFAAC /* CommandLineKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		AABB3B52220FB42A00DEE6F4 /* CommandLineKitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AABB3B5B220FB42A00DEE6F4 /* Build configuration list for PBXNativeTarget "CommandLineKitTests" */;
-			buildPhases = (
-				AABB3B4F220FB42A00DEE6F4 /* Sources */,
-				AABB3B50220FB42A00DEE6F4 /* Frameworks */,
-				AABB3B51220FB42A00DEE6F4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AABB3B5A220FB42A00DEE6F4 /* PBXTargetDependency */,
-			);
-			name = CommandLineKitTests;
-			productName = CommandLineKitTests;
-			productReference = AABB3B53220FB42A00DEE6F4 /* CommandLineKitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -160,11 +102,6 @@
 					5D06884219674D7D00BBFAAC = {
 						CreatedOnToolsVersion = 6.0;
 						LastSwiftMigration = 1020;
-					};
-					AABB3B52220FB42A00DEE6F4 = {
-						CreatedOnToolsVersion = 10.2;
-						DevelopmentTeam = T7MC635YG5;
-						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -182,20 +119,12 @@
 			projectRoot = "";
 			targets = (
 				5D06884219674D7D00BBFAAC /* CommandLineKit */,
-				AABB3B52220FB42A00DEE6F4 /* CommandLineKitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5D06884119674D7D00BBFAAC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AABB3B51220FB42A00DEE6F4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -215,24 +144,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AABB3B4F220FB42A00DEE6F4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AABB3B5E220FB48200DEE6F4 /* StringExtensionTests.swift in Sources */,
-				AABB3B5F220FB48200DEE6F4 /* CommandLineTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		AABB3B5A220FB42A00DEE6F4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5D06884219674D7D00BBFAAC /* CommandLineKit */;
-			targetProxy = AABB3B59220FB42A00DEE6F4 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5D06885719674D7D00BBFAAC /* Debug */ = {
@@ -394,58 +306,6 @@
 			};
 			name = Release;
 		};
-		AABB3B5C220FB42A00DEE6F4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = T7MC635YG5;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = Tests/CommandLineKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pvieito.CommandLineKitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		AABB3B5D220FB42A00DEE6F4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = T7MC635YG5;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = Tests/CommandLineKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pvieito.CommandLineKitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -463,15 +323,6 @@
 			buildConfigurations = (
 				5D06885A19674D7D00BBFAAC /* Debug */,
 				5D06885B19674D7D00BBFAAC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AABB3B5B220FB42A00DEE6F4 /* Build configuration list for PBXNativeTarget "CommandLineKitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AABB3B5C220FB42A00DEE6F4 /* Debug */,
-				AABB3B5D220FB42A00DEE6F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
